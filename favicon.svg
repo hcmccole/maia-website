@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <rect width="160" height="160" rx="32" fill="#0A0A0A"/>
+  <path d="M98.12 12.38 A70 70 0 1 1 61.88 12.38 M96.56 18.18 A64 64 0 1 1 63.44 18.18 M98.12 12.38 L96.56 18.18 M61.88 12.38 L63.44 18.18" fill="none" stroke="#C9B27C" stroke-width="6"/>
+  <text x="80" y="106" text-anchor="middle" font-family="Playfair Display, Georgia, 'Times New Roman', serif" font-size="76" fill="#C9B27C">M</text>
+</svg>
