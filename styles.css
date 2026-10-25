@@ -11,6 +11,8 @@
   --gutter: clamp(24px, 6vw, 96px);
   /* One ring weight for every size, so the mark scales in proportion (about 1% of its width) */
   --ring: 1.4;
+  /* Height of the sticky header: 44px mark plus 16px padding top and bottom */
+  --header-h: 76px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -61,6 +63,7 @@ a:focus-visible { outline: 1px solid var(--champagne); outline-offset: 6px; }
 /* Header */
 .site-header {
   position: sticky; top: 0; z-index: 10;
+  min-height: var(--header-h);
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 40px;
   padding: 16px clamp(20px, 3vw, 40px);
   background: rgba(10, 10, 10, 0.9);
@@ -81,7 +84,9 @@ a:focus-visible { outline: 1px solid var(--champagne); outline-offset: 6px; }
 /* Brand book cover lockup: mark 300, gaps 40, MAIA 140 tracked 14, descriptor 24 tracked 10 (all scaled from the mark) */
 .hero {
   --size: clamp(160px, 22vw, 240px);
-  min-height: clamp(480px, 74vh, 760px);
+  /* Fill the first screen exactly, so the next image starts just below the fold */
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: calc(var(--size) * 0.08);
   text-align: center;
