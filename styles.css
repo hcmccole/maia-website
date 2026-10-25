@@ -164,7 +164,6 @@ em, i, .section .label { color: var(--champagne); }
   background:
     radial-gradient(ellipse 55% 60% at 50% 42%, rgba(201, 178, 124, 0.14) 0%, rgba(201, 178, 124, 0.04) 45%, rgba(0, 0, 0, 0) 75%),
     linear-gradient(180deg, #151412 0%, #0D0D0C 100%);
-  border: 1px solid #1E1D1B;
 }
 .ph__note { font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .ph__frame { overflow: hidden; }
