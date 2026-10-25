@@ -199,10 +199,14 @@ a:focus-visible { outline: 1px solid var(--champagne); outline-offset: 6px; }
 }
 .statement__text {
   margin: 0 auto; max-width: 18ch;
-  font-family: var(--serif); font-weight: 400;
+  /* Playfair is the variable version of Playfair Display: its optical size axis makes strokes finer as the text gets bigger */
+  font-family: 'Playfair', var(--serif); font-optical-sizing: auto; font-weight: 400;
   font-size: clamp(36px, 6vw, 76px); line-height: 1.1; letter-spacing: -0.015em;
   text-wrap: balance;
 }
+/* Lighter as it scales up, so large sizes never look heavy */
+@media (min-width: 900px) { .statement__text { font-weight: 350; } }
+@media (min-width: 1200px) { .statement__text { font-weight: 300; } }
 .statement__text em { font-style: italic; color: var(--champagne); }
 
 /* Process */
