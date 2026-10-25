@@ -53,20 +53,22 @@ a:focus-visible { outline: 1px solid var(--champagne); outline-offset: 6px; }
   transform: translateY(-0.064em);
 }
 /* Brand book: ring about 1% of its width, heavier only below 64px, so the smallest use here is 64px */
-.mark--sm { --size: 64px; width: var(--size); height: var(--size); }
+.mark--sm { --size: 44px; width: var(--size); height: var(--size); }
+/* Brand book small size artwork: below 64px the bands are slightly heavier so the opening stays clear */
+.mark--sm svg { stroke-width: 2; }
 .mark--lg { width: var(--size); height: var(--size); }
 
 /* Header */
 .site-header {
   position: sticky; top: 0; z-index: 10;
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 40px;
-  padding: 22px var(--gutter);
+  padding: 16px clamp(20px, 3vw, 40px);
   background: rgba(10, 10, 10, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 /* Brand book horizontal lockup: mark 110, gap 28, MAIA 64 tracked 6 (all scaled from the mark) */
-.lockup { --size: 64px; display: inline-flex; align-items: center; gap: calc(var(--size) * 0.2545); }
+.lockup { --size: 44px; display: inline-flex; align-items: center; gap: calc(var(--size) * 0.2545); }
 .lockup__word { font-family: var(--serif); font-weight: 400; font-size: calc(var(--size) * 0.5818); line-height: 1; letter-spacing: 0.094em; }
 .site-header nav { display: flex; flex-wrap: wrap; gap: 4px 36px; }
 .site-header nav a {
@@ -79,11 +81,11 @@ a:focus-visible { outline: 1px solid var(--champagne); outline-offset: 6px; }
 /* Brand book cover lockup: mark 300, gaps 40, MAIA 140 tracked 14, descriptor 24 tracked 10 (all scaled from the mark) */
 .hero {
   --size: clamp(160px, 22vw, 240px);
-  min-height: calc(100vh - 108px);
+  min-height: clamp(480px, 74vh, 760px);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: calc(var(--size) * 0.1333);
+  gap: calc(var(--size) * 0.08);
   text-align: center;
-  padding: 72px var(--gutter) 120px;
+  padding: 40px var(--gutter);
 }
 .hero__word {
   margin: 0;
@@ -93,11 +95,11 @@ a:focus-visible { outline: 1px solid var(--champagne); outline-offset: 6px; }
 .eyebrow {
   margin: 0;
   font-size: calc(var(--size) * 0.08); font-weight: 400; line-height: 1.4;
-  letter-spacing: 0.417em; padding-left: 0.417em;
+  letter-spacing: 0.25em; padding-left: 0.25em;
   text-transform: uppercase; color: var(--champagne);
 }
 .hero__line {
-  margin: 24px 0 0;
+  margin: 12px 0 0;
   font-size: clamp(19px, 2vw, 23px); line-height: 1.5;
   letter-spacing: 0.01em; color: var(--soft);
 }
